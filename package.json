@@ -21,14 +21,16 @@
     "lint:staged": "lint-staged",
     "mocha-reporter-options": "[ -n \"${CI}\" ] && echo '--reporter xunit --reporter-options output=reports/junit/test.xml'",
     "precommit": "npm run --silent lint:staged",
-    "test": "nyc --reporter=text mocha $(npm run --silent mocha-reporter-options) './src/**/*-spec.js'",
+    "test": "nyc --reporter=text mocha $(npm run --silent mocha-reporter-options) './src/**/*-spec.js' './test/integration/spec/**/*.js'",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "engines": {},
   "keywords": [],
   "author": "Ian W. Remmel <design@ianwremmel.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@ianwremmel/exception": "^1.0.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^4.2.2",
     "@commitlint/config-angular": "^4.2.1",
@@ -39,14 +41,17 @@
     "condition-circle": "^1.5.0",
     "coveralls": "^3.0.0",
     "dependency-check": "^2.9.1",
+    "ejs": "^2.5.7",
     "eslint": "^4.10.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-mocha": "^4.11.0",
+    "express": "^4.16.2",
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
     "mocha": "^4.0.1",
     "nyc": "^11.2.1",
-    "semantic-release": "^8.2.0"
+    "semantic-release": "^8.2.0",
+    "supertest": "^3.0.0"
   },
   "lint-staged": {
     "*.js": "lint:eslint",
