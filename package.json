@@ -2,7 +2,7 @@
   "name": "@ianwremmel/http-server-exceptions",
   "version": "0.0.0-development",
   "description": "Server-side exceptions and express middleware",
-  "bin": {},
+  "main": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "https://api.github.com/users/ianwremmel"
@@ -32,6 +32,8 @@
   "devDependencies": {
     "@commitlint/cli": "^4.2.2",
     "@commitlint/config-angular": "^4.2.1",
+    "@ianwremmel/eslint-config-base": "^1.0.0",
+    "@ianwremmel/eslint-config-standard": "^1.1.0",
     "babel-eslint": "^8.0.1",
     "chai": "^4.1.2",
     "condition-circle": "^1.5.0",
