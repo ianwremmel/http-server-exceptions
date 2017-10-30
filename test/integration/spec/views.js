@@ -46,12 +46,12 @@ describe('Exception', () => {
       });
 
       describe('when there\'s a 404 handler before the error middleware', () => {
-        it('renders the 404 template');
+        it('renders the 404 template', () => request(app)
+          .get('/not-found')
+          .set('accept', 'text/html')
+          .expect(404, 'This is the 404 template\n'));
       });
 
-      describe('when there\'s a 404 handler after the error middleware', () => {
-        it('renders the 404 template');
-      });
     });
   });
 });

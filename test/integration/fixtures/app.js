@@ -9,7 +9,7 @@ const express = require('express');
 const middleware = require('../../..');
 
 const {
-  BadRequest, BadGateway, PaymentRequired
+  BadGateway, BadRequest, NotFound, PaymentRequired
 } = middleware;
 
 const app = module.exports = express();
@@ -31,5 +31,9 @@ app.use('/bad-request', (req, res, next) => {
 
 app.use('/error-render-error', (req, res, next) => {
   next(new PaymentRequired(req));
+});
+
+app.use((req, res, next) => {
+  next(new NotFound());
 });
 app.use(middleware());
