@@ -73,9 +73,13 @@ module.exports = function configure() {
  * @returns {undefined}
  */
 function renderAsText(res, err) {
+  let msg = `${err.name}: ${err.message}\n${err.method} ${err.path}`;
+  if (err.requestId) {
+    msg = `${msg}\nREQUEST ID: ${err.requestId}`;
+  }
   return res
     .status(err.code)
-    .send(`${err.name}: ${err.message}\n${err.method} ${err.path}\nREQUEST ID: ${err.requestId}`)
+    .send(msg)
     .end();
 }
 /**

@@ -71,10 +71,27 @@ describe('Exception', () => {
       .expect(502, 'BadGateway: No!\nGET /missing-req\nREQUEST ID: 5'));
 
     app.use(middleware());
-  });
 
-  describe('when there is no request id header', () => {
-    it('renders the other pertinent information as html');
-    it('renders the other pertinent information as text');
+    describe('when there is no request id header', () => {
+      const app2 = express();
+      app2.get('/gateway-error', (req, res, next) => next(new BadGateway('No!', req)));
+      app2.use(middleware());
+
+      it('renders the other pertinent information as html', () => request(app2)
+        .get('/gateway-error')
+        .set('accept', 'text/html')
+        .expect(502, 'BadGateway: No!\nGET /gateway-error'));
+
+      it('renders the other pertinent information as text', () => request(app2)
+        .get('/gateway-error')
+        .set('accept', 'application/json')
+        .expect(502, {
+          code: 502,
+          message: 'No!',
+          method: 'GET',
+          path: '/gateway-error',
+          type: 'BadGateway'
+        }));
+    });
   });
 });
