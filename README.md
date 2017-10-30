@@ -21,6 +21,22 @@ npm install @ianwremmel/http-server-exceptions
 
 ## Usage
 
+### Setup the Middleware
+
+```js
+const middleware = require('@ianwremmel/http-server-exceptions');
+app.use(middleware());
+```
+
+### Throw an Error
+
+```js
+const {BadGateway} = require('@ianwremmel/http-server-exceptions');
+app.use(`/always-fails`, (req, res, next) => {
+  next(new BadGatway('remote server could not be reached', req));
+});
+```
+
 ## Maintainers
 
 [Ian Remmel](https://github.com/ianwremmel)
