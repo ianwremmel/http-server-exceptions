@@ -52,6 +52,14 @@ describe('Exception', () => {
           .expect(404, 'This is the 404 template\n'));
       });
 
+      // Yes, this test implementation is identical to the 404 handler test, but
+      // the tests run fast enough that adding the second it() statement
+      // drastically reduces the odds of someday changing the implementation of
+      // the 404 test and breaking the templating behavior
+      it('passes the error object to the template', () => request(app)
+        .get('/not-found')
+        .set('accept', 'text/html')
+        .expect(404, 'This is the 404 template\n'));
     });
   });
 });
