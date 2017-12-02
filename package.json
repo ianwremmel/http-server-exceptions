@@ -32,7 +32,7 @@
     "@ianwremmel/exception": "^1.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^4.2.2",
+    "@commitlint/cli": "^5.0.0",
     "@commitlint/config-angular": "^4.2.1",
     "@ianwremmel/eslint-config-base": "^1.0.0",
     "@ianwremmel/eslint-config-standard": "^1.1.0",
