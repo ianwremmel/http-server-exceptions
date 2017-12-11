@@ -54,8 +54,7 @@ class HttpServerException extends Exception {
   /**
    * Constructor
    * @param {string} [message] -
-   * @param {IncomingMessage} [req] -
-   * @returns {HttpServerException} -
+   * @param {IncomingMessage} [req]
    */
   constructor(message, req) {
     if (typeof message === 'object') {
@@ -116,7 +115,7 @@ class ClientError extends HttpServerException {}
 class BadRequest extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 400;
@@ -140,7 +139,7 @@ class BadRequest extends ClientError {
 class Unauthorized extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 401;
@@ -154,7 +153,7 @@ class Unauthorized extends ClientError {
 class PaymentRequired extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 402;
@@ -173,7 +172,7 @@ class PaymentRequired extends ClientError {
 class Forbidden extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 403;
@@ -193,7 +192,7 @@ class Forbidden extends ClientError {
 class NotFound extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 404;
@@ -209,7 +208,7 @@ class NotFound extends ClientError {
 class MethodNotAllowed extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 405;
@@ -242,7 +241,7 @@ class MethodNotAllowed extends ClientError {
 class NotAcceptable extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 406;
@@ -262,7 +261,7 @@ class NotAcceptable extends ClientError {
 class ProxyAuthenticationRequired extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 407;
@@ -278,7 +277,7 @@ class ProxyAuthenticationRequired extends ClientError {
 class RequestTimeout extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 408;
@@ -306,7 +305,7 @@ class RequestTimeout extends ClientError {
 class Conflict extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 409;
@@ -335,7 +334,7 @@ class Conflict extends ClientError {
 class Gone extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 410;
@@ -351,7 +350,7 @@ class Gone extends ClientError {
 class LengthRequired extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 411;
@@ -369,7 +368,7 @@ class LengthRequired extends ClientError {
 class PreconditionFailed extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 412;
@@ -389,7 +388,7 @@ class PreconditionFailed extends ClientError {
 class RequestEntityTooLarge extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 413;
@@ -410,7 +409,7 @@ class RequestEntityTooLarge extends ClientError {
 class RequestUriTooLong extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 414;
@@ -426,7 +425,7 @@ class RequestUriTooLong extends ClientError {
 class UnsupportedMediaType extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 415;
@@ -451,7 +450,7 @@ class UnsupportedMediaType extends ClientError {
 class RequestRangeNotSatisfiable extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 416;
@@ -468,7 +467,7 @@ class RequestRangeNotSatisfiable extends ClientError {
 class ExpectationFailed extends ClientError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 417;
@@ -495,7 +494,7 @@ class ServerError extends HttpServerException {}
 class InternalServerError extends ServerError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 500;
@@ -511,7 +510,7 @@ class InternalServerError extends ServerError {
 class NotImplemented extends ServerError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 501;
@@ -526,7 +525,7 @@ class NotImplemented extends ServerError {
 class BadGateway extends ServerError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 502;
@@ -549,7 +548,7 @@ class BadGateway extends ServerError {
 class ServiceUnavailable extends ServerError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 503;
@@ -569,7 +568,7 @@ class ServiceUnavailable extends ServerError {
 class GatewayTimeout extends ServerError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 504;
@@ -588,7 +587,7 @@ class GatewayTimeout extends ServerError {
 class HttpVersionNotSupported extends ServerError {
   /**
    * Http Status Code
-   * @returns {Number} - HTTP Status Code
+   * @returns {number} - HTTP Status Code
    */
   get code() {
     return 505;
