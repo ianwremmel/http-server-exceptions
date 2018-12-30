@@ -1,7 +1,5 @@
 'use strict';
 
-/* eslint-disable class-methods-use-this */
-
 const Exception = require('@ianwremmel/exception');
 
 const requests = new WeakMap();

@@ -18,7 +18,9 @@ module.exports = function configure() {
     [express docs](https://expressjs.com/en/guide/error-handling.html), so I'm
     choosing to believe it's adequately covered. */
     if (res.headersSent) {
-      logger.info('headers already sent, not handling possible HttpServerException');
+      logger.info(
+        'headers already sent, not handling possible HttpServerException'
+      );
       return next(err);
     }
 
@@ -37,23 +39,34 @@ module.exports = function configure() {
         }
 
         logger.info('Attempting to render template via views engine');
-        return res.render(err.code.toString(), {error: err}, (renderError, html) => {
-          if (renderError) {
-            if (renderError.message.includes('Failed to lookup view')) {
-              logger.info(`No template found for ${err.code}, rendering exception as text`);
-              return renderAsText(res, err);
+        return res.render(
+          err.code.toString(),
+          {error: err},
+          (renderError, html) => {
+            if (renderError) {
+              if (renderError.message.includes('Failed to lookup view')) {
+                logger.info(
+                  `No template found for ${
+                    err.code
+                  }, rendering exception as text`
+                );
+                return renderAsText(res, err);
+              }
+
+              logger.info(
+                'An error occured while trying to render the error response',
+                renderError
+              );
+              return next(renderError);
             }
 
-            logger.info('An error occured while trying to render the error response', renderError);
-            return next(renderError);
+            logger.info(`Found error template for ${err.code}, rendering`);
+            return res
+              .status(err.code)
+              .send(html)
+              .end();
           }
-
-          logger.info(`Found error template for ${err.code}, rendering`);
-          return res
-            .status(err.code)
-            .send(html)
-            .end();
-        });
+        );
       }
 
       logger.info('rendering exception as JSON');
