@@ -1,18 +1,14 @@
 'use strict';
 
-/* eslint-disable import/no-extraneous-dependencies */
-
 const path = require('path');
 
 const express = require('express');
 
 const middleware = require('../../..');
 
-const {
-  BadGateway, BadRequest, NotFound, PaymentRequired
-} = middleware;
+const {BadGateway, BadRequest, NotFound, PaymentRequired} = middleware;
 
-const app = module.exports = express();
+const app = (module.exports = express());
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 

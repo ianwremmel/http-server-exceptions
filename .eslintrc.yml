@@ -1,7 +1,15 @@
-env:
-  es6: true
-  node: true
 extends:
-  - "@ianwremmel/eslint-config-standard"
+  - 'plugin:@ianwremmel/ianwremmel/node'
+overrides:
+  - env:
+      mocha: true
+    files:
+      - '**/*-spec.js'
+      - 'test/**/*'
+    rules:
+      max-nested-callbacks: off
+      require-jsdoc: off
 parserOptions:
   sourceType: 'script'
+rules:
+  class-methods-use-this: off
