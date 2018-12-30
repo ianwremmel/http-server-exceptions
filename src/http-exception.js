@@ -1,6 +1,6 @@
 'use strict';
 
-const Exception = require('@ianwremmel/exception');
+const {Exception} = require('@ianwremmel/exception');
 
 const requests = new WeakMap();
 
