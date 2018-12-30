@@ -51,7 +51,7 @@ describe('Exception', () => {
           message: 'No!',
           method: 'GET',
           path: '/gateway-error',
-          requestId: 3,
+          requestId: '3',
           type: 'BadGateway'
         }));
 
