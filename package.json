@@ -28,7 +28,7 @@
     "@ianwremmel/exception": "^2.1.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.0.0",
+    "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@ianwremmel/eslint-config-standard": "^1.2.0",
     "@ianwremmel/eslint-plugin-ianwremmel": "^2.0.0",
