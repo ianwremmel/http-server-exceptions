@@ -46,9 +46,7 @@ module.exports = function configure() {
             if (renderError) {
               if (renderError.message.includes('Failed to lookup view')) {
                 logger.info(
-                  `No template found for ${
-                    err.code
-                  }, rendering exception as text`
+                  `No template found for ${err.code}, rendering exception as text`
                 );
                 return renderAsText(res, err);
               }
