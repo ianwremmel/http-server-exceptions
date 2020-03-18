@@ -34,7 +34,6 @@
     "@ianwremmel/eslint-plugin-ianwremmel": "^2.0.0",
     "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
-    "condition-circle": "^2.0.0",
     "coveralls": "^3.0.2",
     "dependency-check": "^4.1.0",
     "ejs": "^3.0.1",
@@ -61,7 +60,10 @@
     "bin/**": "npm run eslint -- "
   },
   "release": {
-    "verifyConditions": "condition-circle"
+    "branches": [
+      "master"
+    ],
+    "ci": true
   },
   "husky": {
     "hooks": {
