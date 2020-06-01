@@ -20,7 +20,9 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "lint:es": "npm run --silent eslint -- ."
   },
-  "engines": {},
+  "engines": {
+    "node": ">=12"
+  },
   "keywords": [],
   "author": "Ian W. Remmel <design@ianwremmel.com>",
   "license": "MIT",
