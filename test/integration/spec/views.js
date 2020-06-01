@@ -33,7 +33,7 @@ describe('Exception', () => {
               method: 'GET',
               path: '/gateway-error',
               requestId: '3',
-              type: 'BadGateway'
+              type: 'BadGateway',
             }));
       });
 

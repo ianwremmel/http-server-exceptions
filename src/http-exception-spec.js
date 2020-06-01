@@ -26,7 +26,7 @@ const {
   BadGateway,
   ServiceUnavailable,
   GatewayTimeout,
-  HttpVersionNotSupported
+  HttpVersionNotSupported,
 } = require('./http-exception');
 
 [
@@ -53,7 +53,7 @@ const {
   [BadGateway, 502],
   [ServiceUnavailable, 503],
   [GatewayTimeout, 504],
-  [HttpVersionNotSupported, 505]
+  [HttpVersionNotSupported, 505],
 ].forEach(([Constructor, code]) => {
   describe(Constructor.name, () => {
     describe('#code', () => {

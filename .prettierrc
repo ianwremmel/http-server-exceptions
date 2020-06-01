@@ -5,8 +5,16 @@
   "useTabs": false,
   "semi": true,
   "singleQuote": true,
-  "trailingComma": "none",
+  "trailingComma": "es5",
   "bracketSpacing": false,
   "jsxBracketSameLine": false,
-  "proseWrap": "always"
+  "proseWrap": "always",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
 }

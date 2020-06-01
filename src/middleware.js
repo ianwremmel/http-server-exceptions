@@ -59,10 +59,7 @@ module.exports = function configure() {
             }
 
             logger.info(`Found error template for ${err.code}, rendering`);
-            return res
-              .status(err.code)
-              .send(html)
-              .end();
+            return res.status(err.code).send(html).end();
           }
         );
       }
@@ -88,10 +85,7 @@ function renderAsText(res, err) {
   if (err.requestId) {
     msg = `${msg}\nREQUEST ID: ${err.requestId}`;
   }
-  return res
-    .status(err.code)
-    .send(msg)
-    .end();
+  return res.status(err.code).send(msg).end();
 }
 /**
  * Render the error as JSON
@@ -101,8 +95,5 @@ function renderAsText(res, err) {
  * @returns {undefined}
  */
 function renderAsJSON(res, err) {
-  return res
-    .status(err.code)
-    .send(err.toJSON())
-    .end();
+  return res.status(err.code).send(err.toJSON()).end();
 }

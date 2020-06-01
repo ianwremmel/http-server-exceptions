@@ -52,7 +52,7 @@ describe('Exception', () => {
           method: 'GET',
           path: '/gateway-error',
           requestId: '3',
-          type: 'BadGateway'
+          type: 'BadGateway',
         }));
 
     it('converts exceptions to html http responses', () =>
@@ -97,7 +97,7 @@ describe('Exception', () => {
             message: 'No!',
             method: 'GET',
             path: '/gateway-error',
-            type: 'BadGateway'
+            type: 'BadGateway',
           }));
     });
   });
