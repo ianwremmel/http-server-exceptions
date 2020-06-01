@@ -33,7 +33,7 @@ app.use(middleware());
 ```js
 const {BadGateway} = require('@ianwremmel/http-server-exceptions');
 app.use(`/always-fails`, (req, res, next) => {
-  next(new BadGatway('remote server could not be reached', req));
+    next(new BadGatway('remote server could not be reached', req));
 });
 ```
 

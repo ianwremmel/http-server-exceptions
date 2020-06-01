@@ -80,7 +80,7 @@ class HttpServerException extends Exception {
       requestId: this.req && this.req.requestId,
       method: this.req && this.req.method,
       path: this.req && this.req.path,
-      message: this.message
+      message: this.message,
       /* eslint-enable sort-keys */
     };
   }
@@ -621,7 +621,7 @@ module.exports = {
   BadGateway,
   ServiceUnavailable,
   GatewayTimeout,
-  HttpVersionNotSupported
+  HttpVersionNotSupported,
 };
 
 /* eslint-enable sort-keys */

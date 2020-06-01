@@ -1,15 +1,22 @@
+env:
+  node: true
 extends:
-  - 'plugin:@ianwremmel/ianwremmel/node'
+  - plugin:@ianwremmel/ianwremmel/modern
+  - prettier
 overrides:
   - env:
       mocha: true
     files:
       - '**/*-spec.js'
-      - 'test/**/*'
+      - test/**/*
     rules:
       max-nested-callbacks: off
       require-jsdoc: off
 parserOptions:
-  sourceType: 'script'
+  sourceType: script
 rules:
   class-methods-use-this: off
+  strict:
+    - error
+    - global
+  compat/compat: off
