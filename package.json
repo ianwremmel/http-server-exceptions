@@ -24,7 +24,7 @@
   "author": "Ian W. Remmel <design@ianwremmel.com>",
   "license": "MIT",
   "dependencies": {
-    "@ianwremmel/exception": "^3.0.0"
+    "@ianwremmel/exception": "^3.1.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
