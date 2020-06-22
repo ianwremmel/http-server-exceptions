@@ -27,7 +27,7 @@
     "@ianwremmel/exception": "^3.1.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
+    "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^8.3.4",
     "@ianwremmel/eslint-plugin-ianwremmel": "^4.0.2",
     "chai": "^4.1.2",
